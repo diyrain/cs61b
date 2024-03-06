@@ -12,8 +12,8 @@ public class NBody {
         In in = new In(a);
         int num = in.readInt();
         double radius = in.readDouble();
-        Planet[] planet = new Planet[5];
-        for (int i = 0; i < 5; i++)
+        Planet[] planet = new Planet[num];
+        for (int i = 0; i < num; i++)
         {
             if(!in.isEmpty())
             {
@@ -38,25 +38,27 @@ public class NBody {
 
         StdDraw.enableDoubleBuffering();
 
-        double[] xForces = new double[5];
-        double[] yForces = new double[5];
+
         double time = 0;
         while (time <= T)
         {
-            for (int i = 0; i < 5; i++)
+            int leng = plan.length;
+            double[] xForces = new double[plan.length];
+            double[] yForces = new  double[plan.length];
+            for (int i = 0; i < leng; i++)
             {
                 xForces[i] = plan[i].calcNetForceExertedByX(plan);
                 yForces[i] = plan[i].calcNetForceExertedByY(plan);
             }
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < leng; i++)
             {
                 plan[i].update(dt, xForces[i], yForces[i]);
             }
 
             StdDraw.setScale(-Radi, Radi);
             StdDraw.picture(0, 0, background);
-            for (int j = 0; j < 5; j++)
+            for (int j = 0; j < leng; j++)
             {
                 plan[j].draw();
             }

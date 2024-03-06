@@ -35,7 +35,7 @@ public class Planet
         return r;
     }
 
-    public static double G = 6.67e-11;
+    private double G = 6.67e-11;
     public double calcForceExertedBy(Planet p)
     {
         double r = this.calcDistance(p);
@@ -61,7 +61,7 @@ public class Planet
         return F_y;
     }
 
-    public boolean equals(Planet p)
+    private boolean equals(Planet p)
     {
         if (this != p)
         {
