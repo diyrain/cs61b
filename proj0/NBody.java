@@ -28,7 +28,7 @@ public class NBody {
         }
         return planet;
     }
-    public static String background = "images/starfield.jpg";
+
     public static void main(String[] args) {
         double T = Double.parseDouble(args[0]);
         double dt = Double.parseDouble(args[1]);
@@ -57,7 +57,7 @@ public class NBody {
             }
 
             StdDraw.setScale(-Radi, Radi);
-            StdDraw.picture(0, 0, background);
+            StdDraw.picture(0, 0, "images/starfield.jpg");
             for (int j = 0; j < leng; j++)
             {
                 plan[j].draw();
