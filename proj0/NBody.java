@@ -76,4 +76,8 @@ public class NBody {
                     plan[i].yyVel, plan[i].mass, plan[i].imgFileName);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 5b9f0479babe221a65b6220d26932bb89e6d927e
