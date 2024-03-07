@@ -80,19 +80,62 @@ public class IntList {
      * *  elements of B.  May modify items of A. Don't use 'new'.
      */
 
+    //要求将B连接到A后面
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+        IntList p = A;
+        if (p.rest == null)
+        {
+            p.rest = B;
+        }
+        else
+        {
+            dcatenate(p.rest, B);
+
+        }
+        return A;
     }
+
+    /**方法2 迭代
+     * IntList p = A;
+     * while (p == null)
+     *  {
+            p.pest = B;
+        }
+        return A;
+     */
 
     /**
      * Returns a list consisting of the elements of A followed by the
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+        if (A == null)
+        {
+            return null;
+        }
+        IntList res = new IntList(A.first, null);
+        IntList p = res;
+        A = A.rest;
+        while (A != null)
+        {
+            p.rest = new IntList(A.first, null);
+            A = A.rest;
+            p = p.rest;
+        }
+        p.rest = B;
+        return res;
     }
+
+    /** 方法 递归
+     * if (A == null)
+     *     {
+     *         return null;
+     *     }
+     *     return new IntList(A.first, catenate(A.rest, B));
+     */
+
+
+
 
 
 

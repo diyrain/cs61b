@@ -41,7 +41,7 @@ public class IntListTest {
      */
 
     @Test
-    public void testSquareListRecursive() {
+    public void squareListRecursive() {
         IntList L = IntList.of(1, 2, 3);
         IntList res = IntList.squareListRecursive(L);
         assertEquals(IntList.of(1, 2, 3), L);
