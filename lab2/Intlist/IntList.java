@@ -82,6 +82,10 @@ public class IntList {
 
     //要求将B连接到A后面
     public static IntList dcatenate(IntList A, IntList B) {
+        if (A == null)
+        {
+            return B;
+        }
         IntList p = A;
         if (p.rest == null)
         {
@@ -111,7 +115,7 @@ public class IntList {
     public static IntList catenate(IntList A, IntList B) {
         if (A == null)
         {
-            return null;
+            return B;
         }
         IntList res = new IntList(A.first, null);
         IntList p = res;
@@ -128,8 +132,12 @@ public class IntList {
 
     /** 方法 递归
      * if (A == null)
+     * {
+     *     return B;
+     * }
+     * if (A.rest == null)
      *     {
-     *         return null;
+     *         return new IntList(A.first, B);
      *     }
      *     return new IntList(A.first, catenate(A.rest, B));
      */
